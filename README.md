@@ -4,7 +4,7 @@ A Node.js wrapper for the uniOCR Rust library
 
 ## Features
 
-- [ ] 
+- [ ]
 
 ## Requirements
 
