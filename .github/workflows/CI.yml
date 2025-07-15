@@ -62,7 +62,7 @@ jobs:
             target/
           key: ${{ matrix.settings.target }}-cargo-${{ matrix.settings.host }}
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --immutable
       - name: Build
         run: ${{ matrix.settings.build }}
         shell: bash
