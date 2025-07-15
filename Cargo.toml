@@ -1,23 +1,22 @@
 [package]
-authors = ["LongYinan <lynweklm@gmail.com>"]
 edition = "2021"
 name    = "napi-rs-uni-ocr"
-version = "0.1.0"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+version = "0.0.1"
 
 [lib]
 crate-type = ["cdylib"]
 
 [dependencies]
+# Default enable napi4 feature, see https://nodejs.org/api/n-api.html#node-api-version-matrix
 futures     = "0.3.31"
 image       = "0.25.6"
-napi        = { version = "2", features = ["async"] }
-napi-derive = "2"
+napi = { version = "2.12.2", default-features = false, features = ["napi4", "async"] }
+napi-derive = "2.12.2"
 uni-ocr     = "0.1.5"
 
 [build-dependencies]
-napi-build = "2"
+napi-build = "2.0.1"
 
 [profile.release]
 lto = true
+strip = "symbols"

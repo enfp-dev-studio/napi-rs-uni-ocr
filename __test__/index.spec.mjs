@@ -1,8 +1,12 @@
 import test from 'ava'
 import { readFileSync } from 'fs'
-import { recognize } from '../index'
+import { recognize } from '../index.js'
+import { fileURLToPath } from 'url'
+import { dirname, join } from 'path'
 
-const imagePath = __dirname + '/test_ocr.jpg'
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+const imagePath = join(__dirname, 'test_ocr.jpg')
 console.log('imagePath:', imagePath)
 
 test('recognize: file path', async (t) => {
@@ -29,3 +33,4 @@ test('recognize: buffer', async (t) => {
     t.fail('Failed to read image file')
   }
 })
+ 
