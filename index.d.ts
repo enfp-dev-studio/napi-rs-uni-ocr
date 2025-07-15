@@ -12,7 +12,4 @@ export interface RecognizeResult {
   text: string
   confidence: string
 }
-export declare function recognize(
-  image: string | Buffer,
-  options?: UniOcrOptions | undefined | null,
-): Promise<RecognizeResult>
+export declare function recognize(image: string | Buffer, options?: UniOcrOptions | undefined | null): Promise<RecognizeResult>
