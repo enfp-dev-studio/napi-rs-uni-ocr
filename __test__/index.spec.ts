@@ -1,25 +1,31 @@
 import test from 'ava'
+import { readFileSync } from 'fs'
+import { recognize } from '../index'
 
-import { moveMouseRel, moveMouseAbs, mouseClick, mouseDown, mouseUp, mouseScroll } from '../index'
+const imagePath = __dirname + '/test_ocr.jpg'
+console.log('imagePath:', imagePath)
 
-test('sync function from native code', (t) => {
-  const x = 100
-  const y = 100
-  const button = 'right'
-  const length = 100
-  const isVertical = true
+test('recognize: file path', async (t) => {
+  try {
+    const result = await recognize(imagePath)
+    console.log(result)
+    t.is(typeof result.text, 'string', 'Result text should be a string')
+    t.true(result.text.length > 0, 'Result text should not be empty')
+  } catch (error) {
+    console.error('Error recognizing image file:', error)
+    t.fail('Failed to recognize image file')
+  }
+})
 
-  // console.log(moveMouseRel(x, y))
-  // console.log(moveMouseAbs(x, y))
-  // console.log(mouseClick(button))
-  // console.log(mouseDown(button))
-  // console.log(mouseUp(button))
-  // console.log(mouseScroll(length, isVertical))
-
-  t.is(moveMouseRel(x, y), undefined)
-  t.is(moveMouseAbs(x, y), undefined)
-  t.is(mouseClick(button), undefined)
-  t.is(mouseDown(button), undefined)
-  t.is(mouseUp(button), undefined)
-  t.is(mouseScroll(length, isVertical), undefined)
+test('recognize: buffer', async (t) => {
+  try {
+    const imageBuffer = readFileSync(imagePath)
+    const result = await recognize(imageBuffer)
+    console.log(result)
+    t.is(typeof result.text, 'string', 'Result text should be a string')
+    t.true(result.text.length > 0, 'Result text should not be empty')
+  } catch (error) {
+    console.error('Error reading image file:', error)
+    t.fail('Failed to read image file')
+  }
 })
