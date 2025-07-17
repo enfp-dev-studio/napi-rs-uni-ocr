@@ -5,12 +5,33 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
+"@enfpdev/napi-rs-uni-ocr-darwin-arm64@npm:0.0.1":
+  version: 0.0.1
+  resolution: "@enfpdev/napi-rs-uni-ocr-darwin-arm64@npm:0.0.1"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@enfpdev/napi-rs-uni-ocr-win32-x64-msvc@npm:0.0.1":
+  version: 0.0.1
+  resolution: "@enfpdev/napi-rs-uni-ocr-win32-x64-msvc@npm:0.0.1"
+  conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
 "@enfpdev/napi-rs-uni-ocr@workspace:.":
   version: 0.0.0-use.local
   resolution: "@enfpdev/napi-rs-uni-ocr@workspace:."
   dependencies:
+    "@enfpdev/napi-rs-uni-ocr-darwin-arm64": "npm:0.0.1"
+    "@enfpdev/napi-rs-uni-ocr-win32-x64-msvc": "npm:0.0.1"
     "@napi-rs/cli": "npm:^2.18.4"
     ava: "npm:^6.0.1"
+  dependenciesMeta:
+    "@enfpdev/napi-rs-uni-ocr-darwin-arm64":
+      optional: true
+    "@enfpdev/napi-rs-uni-ocr-win32-x64-msvc":
+      optional: true
   languageName: unknown
   linkType: soft
 
