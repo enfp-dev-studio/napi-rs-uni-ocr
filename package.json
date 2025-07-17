@@ -1,6 +1,6 @@
 {
-  "name": "napi-rs-uni-ocr",
-  "version": "0.0.2",
+  "name": "@enfpdev/napi-rs-uni-ocr",
+  "version": "0.0.1",
   "main": "index.js",
   "types": "index.d.ts",
   "napi": {
@@ -12,6 +12,10 @@
         "x86_64-pc-windows-msvc"
       ]
     }
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "license": "MIT",
   "devDependencies": {
@@ -33,5 +37,10 @@
     "universal": "napi universal",
     "version": "napi version"
   },
-  "packageManager": "yarn@4.9.2"
+  "packageManager": "yarn@4.9.2",
+  "repository": "https://github.com/enfp-dev-studio/napi-rs-uni-ocr",
+  "optionalDependencies": {
+    "@enfpdev/napi-rs-uni-ocr-darwin-arm64": "0.0.1",
+    "@enfpdev/napi-rs-uni-ocr-win32-x64-msvc": "0.0.1"
+  }
 }

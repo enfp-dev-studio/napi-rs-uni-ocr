@@ -1,6 +1,6 @@
 {
-  "name": "napi-rs-uni-ocr-win32-x64-msvc",
-  "version": "0.0.2",
+  "name": "@enfpdev/napi-rs-uni-ocr-win32-x64-msvc",
+  "version": "0.0.1",
   "os": [
     "win32"
   ],
@@ -14,5 +14,6 @@
   "license": "MIT",
   "engines": {
     "node": ">= 10"
-  }
+  },
+  "repository": "https://github.com/enfp-dev-studio/napi-rs-uni-ocr"
 }

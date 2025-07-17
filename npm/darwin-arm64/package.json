@@ -1,6 +1,6 @@
 {
   "name": "@enfpdev/napi-rs-uni-ocr-darwin-arm64",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "os": [
     "darwin"
   ],
@@ -11,22 +11,9 @@
   "files": [
     "napi-rs-uni-ocr.darwin-arm64.node"
   ],
-  "description": "Template project for writing node package with napi-rs",
-  "keywords": [
-    "napi-rs",
-    "NAPI",
-    "N-API",
-    "Rust",
-    "node-addon",
-    "node-addon-api"
-  ],
   "license": "MIT",
   "engines": {
     "node": ">= 10"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
-  },
-  "repository": "git@github.com/enfp-dev-studio/napi-rs-uni-ocr"
+  "repository": "https://github.com/enfp-dev-studio/napi-rs-uni-ocr"
 }
